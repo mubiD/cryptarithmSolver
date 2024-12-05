@@ -1,8 +1,11 @@
 Features
 
 Cryptarithm solving: The module systematically checks all permutations of digits from 0 to 9 and determines which ones satisfy the equation.
+
 Efficient pruning: The solver implements early exit conditions to reduce computation time by terminating when certain conditions are met, such as when intermediate sums exceed the target value.
+
 Execution time measurement: The execution time is measured and displayed for performance benchmarking.
+
 Valid digit assignment: The module avoids invalid solutions by ensuring certain letters (such as N, E, S, and W) do not map to 0, as they represent leading digits in multi-digit numbers.
 
 Installation
@@ -16,7 +19,9 @@ Usage
 To solve the puzzle, call the solve() method. This method performs the following steps:
 
 Generate Permutations: It generates all permutations of digits (0-9) for the letters in the equation.
+
 Check Validity: Each permutation is checked to see if it satisfies the equation NORTH + EAST + SOUTH + WEST = EARTH, where each letter corresponds to a unique digit.
+
 Output Results: For each valid solution, the module prints the corresponding numbers and their mappings. 
 
 Algorithm Details
@@ -41,4 +46,5 @@ Performance Considerations
 The module uses backtracking to generate permutations and applies pruning strategies:
 
 Avoids leading zeros: The first digits of NORTH, EAST, SOUTH, and WEST are never assigned zero, which reduces invalid permutations early.
+
 Early exit: If intermediate sums exceed the value of EARTH, the method terminates further computations for that permutation, reducing unnecessary checks.
